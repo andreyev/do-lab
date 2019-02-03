@@ -1,0 +1,17 @@
+version: "3"
+services:
+  app-server:
+    env_file: .env
+    build: .
+    privileged: true
+    ports:
+      - "80:5000"
+    volumes:
+      - ./app/:/home/app/:Z
+    depends_on:
+      - db-server
+  db-server:
+    image: postgres
+    env_file: .env
+    expose:
+      - 5432

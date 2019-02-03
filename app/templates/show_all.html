@@ -1,0 +1,27 @@
+<html>
+	<form action="{{ request.path }}" method="post">
+	    Input:<br>
+	    <input type="text" name="input"><br>
+	    <input type="submit" value="Submit">
+	</form>
+
+
+	<table>
+	    <thead>
+		<tr>
+		    <th>Old Inputs:</th>
+		</tr>
+	    </thead>
+
+	    <tbody>
+	    {% for input in inputs %}
+		<tr>
+		    <td>{{ input.input }}</td>
+		</tr>
+	    {% endfor %}
+	    </tbody>
+	</table>
+
+
+    </body>
+</html>
